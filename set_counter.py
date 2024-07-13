@@ -15,10 +15,9 @@ def juarez_valley_set_method():  # 운동 세트법
     a_set = sorted(b_set, reverse=True)
 
     for i in range(len(a_set)):
-        print("\n\n------", i+1, "set ------\n")
+        print("\n\n--------", i+1, "set --------\n")
         print("a_set: ", a_set[i])
-        _stand_by()
-        print("b_set: ", b_set[i])
+        print("b_set: ", b_set[i], "\n\n--Press (q/Q) to exit--")
         _stand_by()
 
 if __name__ == "__main__":
