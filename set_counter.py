@@ -20,6 +20,7 @@ async def _check_for_quit_and_run_timer(timer_event):
             timer_event.set()
 
 async def juarez_valley_set_method():  # 운동 세트법
+    print("\n\n\n- Juarez Valley Method Timer Program -\n\n\n")
     print("Input Maximum Reps: ", end="")
     sys.stdout.flush()  # 출력 버퍼를 비워 사용자의 입력을 즉시 화면에 출력
     reps = int(input())
@@ -33,6 +34,9 @@ async def juarez_valley_set_method():  # 운동 세트법
     timer_event = asyncio.Event()
     asyncio.create_task(_check_for_quit_and_run_timer(timer_event))
 
+
+    print("\n--Press (q/Q) to exit--\n")
+
     for i in range(len(odd_set)):
         print(f"\n\n--------- {i + 1:2d} ---------\n")
         print(f"{i * 2 + 1:2d} Set: \t{odd_set[i]:2d} reps")
@@ -43,7 +47,6 @@ async def juarez_valley_set_method():  # 운동 세트법
         await timer_event.wait()
         timer_event.clear()
         await _timer(break_time)
-        print("\n--Press (q/Q) to exit--")
 
 if __name__ == "__main__":
     try:
